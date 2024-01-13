@@ -1,0 +1,68 @@
+﻿<Page x:Class="CAS.DataGridPages.DevicesPage"
+      xmlns:local="clr-namespace:CAS.DataGridPages"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      FontSize="16" Foreground="White"
+      d:DesignHeight="330" d:DesignWidth="660"
+      Title="HistoryPage">
+
+    <Grid>
+        <DataGrid x:Name="dgListOrders" 
+                      Foreground="Black" 
+                      Margin="10"
+                      IsReadOnly="False" 
+                      Style="{StaticResource MaterialDesignDataGrid}"
+                      FontSize="10" 
+                      AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=ID}" Width="71" >
+                    <DataGridTextColumn.Header >
+                        <TextBlock Text="Номер заказа" TextAlignment="Center" TextWrapping="Wrap" />
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Path=Manufacturer}"  >
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Производитель" Width="80" HorizontalAlignment="Center"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Path=Model}" Width="105">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Модель" TextWrapping="Wrap" TextAlignment="Center" />
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Path=Count}" Width="82">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Кол-во покупок" TextWrapping="Wrap" TextAlignment="Center" Width="50"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Path=Price}" Width="80">
+                    <DataGridTextColumn.Header >
+                        <TextBlock Text="Сумма покупок" TextWrapping="Wrap" TextAlignment="Center" Width="50" />
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Path=Category}" Width="83">
+                    <DataGridTextColumn.Header >
+                        <TextBlock Text="Категория" TextWrapping="Wrap" TextAlignment="Center" Width="71" />
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

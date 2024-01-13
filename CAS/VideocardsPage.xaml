@@ -1,0 +1,50 @@
+﻿<Page x:Class="CAS.VideocardsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CAS"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="VideocardsPage">
+    <Grid Background="#696969">
+        <Button Grid.Row="0" Height="30" Width="100" HorizontalAlignment="Right" VerticalAlignment="Top" Content="Вернуться" Click="Click_Back"/>
+            <TextBlock Grid.Row="1" Text="Производитель" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20" Margin="140 30 0 0"/>
+            <StackPanel Grid.Row="1" Margin="80 30 0 0" 
+                        Height="450" Width="300" VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" x:Name="Manufactures">
+                <RadioButton Height="40" Width="200" HorizontalAlignment="Left"
+                             
+                             Margin="60 50 0 0" x:Name="MSI">
+                    <Image Source="Images/VideocardsManufacturer/MSILOGO.png"/>
+                </RadioButton>
+                <RadioButton Height="40" Width="200" HorizontalAlignment="Left" 
+                             Margin="60 30 0 0" x:Name="EVGA">
+                    <Image Source="Images/VideocardsManufacturer/EVGALOGO.png"/>
+                </RadioButton>
+                <RadioButton Height="40" Width="200" HorizontalAlignment="Left" 
+                             Margin="60 30 0 0" x:Name="ASUS">
+                    <Image Source="Images/VideocardsManufacturer/ASUSLOGO.png"/>
+                </RadioButton>
+                <RadioButton Height="40" Width="200" HorizontalAlignment="Left" 
+                             Margin="60 30 0 0" x:Name="INNO3D">
+                    <Image Source="Images/VideocardsManufacturer/INNO3DLOGO.png"/>
+                </RadioButton>
+                <RadioButton Height="40" Width="200" HorizontalAlignment="Left" 
+                             Margin="60 30 0 0" x:Name="PALIT">
+                    <Image Source="Images/VideocardsManufacturer/PALITLOGO.png"/>
+                </RadioButton>
+                <RadioButton Height="40" Width="200" HorizontalAlignment="Left" Margin="60 30 0 0"
+                             x:Name="ZOTAC">
+                    <Image Source="Images/VideocardsManufacturer/ZOTACLOGO.png"/>
+                </RadioButton>
+            </StackPanel>
+        <StackPanel Grid.Row="1">
+            <TextBlock Height="25" Text="Выберите серию:" FontSize="20" HorizontalAlignment="Right" Margin="0 220 70 5"/>
+            <ComboBox Height="25" Width="200" ItemsSource="{Binding Videocards}" DisplayMemberPath="Name" Margin="0 0 50 0" Name="comboBox1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBlock Height="25" Text="Выберите модель:" FontSize="20" HorizontalAlignment="Right" Margin="0 40 70 5"/>
+            <ComboBox Height="25" Width="200" ItemsSource="{Binding SelectedItem.Series, ElementName=comboBox1}"  Margin="0 0 50 0" Name="comboBox2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Button Grid.Row="2" x:Name="AddShoppingCart" Click="Add_ShoppingCart" FontSize="25" Content="Добавить в корзину" Height="50" VerticalAlignment="Bottom" Margin="20"/>
+    </Grid>
+</Page>
